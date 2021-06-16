@@ -3,9 +3,9 @@
 ## Introduction
 
 In this lab, you will design, implement, and test several recursive algorithms.
-The primary goal is to practice devising a recursive solution, with and without divide & conquer, to a problem, and
-then implementing that solution in code. Recall the general steps to devising a
-recursive solution:
+The primary goal is to practice devising a recursive solution, with and without
+divide & conquer, to a problem, and then implementing that solution in code.
+Recall the general steps to devising a recursive solution:
 
 1. **Identify the subproblems:** What smaller (yet structurally identical)
 subproblems will be used to solve the original problem? Note that in divide &
@@ -22,8 +22,7 @@ recursion.
 
 Recursion can be confusing to comprehend at first, so we recommend (in addition
 to class material) watching some visual explanations of the process. Here is a
-link that will help you solve the first part of the lab and prepare you for the
-latter parts:
+link that you might consider taking some time to review:
 
 [Recursion with Gayle Laakmann McDowell](https://www.youtube.com/watch?v=KEEKn7Me-ms)
 
@@ -34,32 +33,59 @@ is a useful resource to prepare for your career moving forward.
 
 ## Gradle Testing on GitHub
 
-In this exercise, in addition to using `./gradlew run` (or `gradlew.bat run` on DOS-like terminals) to run a sample client program, you can also use `./gradlew test` (or `gradlew.bat test` on DOS-like terminals) to execute pre-written unit tests. These tests use JUnit and attempt to reveal whether the assigned methods work as expected.
+As with other recent exercises, we have provided several example tests for this
+exercise. In addition to using `./gradlew run` (or `gradlew.bat run` on DOS-like
+terminals) to run a sample client program, you can also use `./gradlew test` (or
+`gradlew.bat test` on DOS-like terminals) to execute JUnit-based tests. Check
+both to make sure your solutions work as expected.
 
-Recall your programming assignments will come with unit tests that will be run for you each time you push to your submission repository. These will automatically be enabled for your assignments. Don't forget that you'll need to navigate to the "Actions" tab on GitHub and enable these tests for this Recitation.
-
-Also, you can check if these methods work as expected with class `Testers`! This class calls each of the below exercise methods on a few instances, but you should convince yourself that they work in *all* scenarios.
+Recall that your programming assignments come with unit tests that run each time
+you push to your submission repository. These are automatically enabled. If you
+fork this recitation repository and want the included tests to run in your fork,
+you'll need to navigate to the "Actions" tab on GitHub and enable them.
 
 ## Exercise
 
-Write the following methods inside of class `Recursion` and class 'DivideAndConquer'
+1. Download the provided code by forking and cloning this [Recitation 5
+repository](https://github.com/2217-cs445/cs445-rec5). The starting code for
+this exercise, as usual, is found in subdirectory `app/src/main/java/`. Navigate
+to this subdirectory, then into the `cs445/rec5/` package folder within it. Note
+the following provided Java files:
 
-```
-/**
- * Reverses the order of the objects in an array
- */
-static <T> void reverse(T[] a)
-```
+   - `Recursion.java` contains method stubs for today's exercises (non-D&C
+     versions), as well as a few helper methods.
+   - `DivideAndConquer.java` contains method stubs for today's exercises (D&C
+     versions), as well as a few helper methods.
+   - `Testers.java` contains a few tests for today's exercises inside of a
+     `main` method. It is run when you execute `./gradlew run` (or `gradlew.bat
+     run` on DOS-like terminals).
 
-```
-/**
- * Determines the minimum and maximum element of an array of ints
- */
-static MinMax findMinMax(int[] nums)
-```
+2. Implement the following methods in `Recursion.java` using recursion. First tackle them using "standard" recursion (i.e., without divide & conquer).
 
-Be sure to test that your methods pass the provided JUnit tests by running `./gradlew test` (or `gradlew.bat test` on DOS-like terminals) and when pushing to the GitHub repository using the `git push` command.
+       /**
+        * Reverses the order of the objects in an array
+        */
+       static <T> void reverse(T[] a)
+
+       /**
+        * Determines the minimum and maximum element of an array of ints
+        */
+       static MinMax findMinMax(int[] nums)
+
+3. Test that your methods pass the provided tests.
+
+4. Implement the above methods again in `DivideAndConquer.java`, this time using
+divide & conquer recursion.
+
+5. Test that your methods pass the provided tests.
 
 ## Conclusion
 
-In this exercise, you practiced using Recursion in order to reverse the contents of an array and find the min and max of an array by breaking the problems down into similar subproblems. In addition to Tail Recursion, you utilized Divide and Conquer techniques to solve the same problems by breaking the problems into *fractional* subproblems. While the asymptotic runtimes of both approaches were the same in these exercises, we will study problems later in the course where Divide and Conquer approaches have a lower asymptotic runtime.
+In this exercise, you practiced using recursion in order to reverse the contents
+of an array and find the min and max of an array by breaking the problems down
+into similar subproblems. In addition to simple recursion, you also utilized
+divide & conquer techniques to solve the same problems by breaking the problems
+into *fractional* subproblems. While the asymptotic runtimes of both approaches
+were the same in these exercises, we will study problems later in the course
+where divide & conquer approaches have a lower asymptotic runtime.
+
