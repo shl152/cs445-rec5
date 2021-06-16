@@ -1,7 +1,5 @@
 package cs445.rec5;
 
-import java.util.Arrays;
-
 public class DivideAndConquer {
 
     /**
