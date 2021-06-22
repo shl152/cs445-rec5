@@ -63,10 +63,17 @@ public class Recursion {
      *
      * @param arr The array to be reversed.
      * @param start The first index of arr array.
-     * @param end The last index of arr array.
+     * @param end The last index of arr array+1.
      */
     private static <T> void reverse(T[] arr, int start, int end) {
         // TODO: Complete this method using recursion.
+        if(end>start){
+            //swapping the first element with the last remaining element
+            swap(arr,start,end-1);
+            //call recursion, and eliminate the elements that have been swapped
+            reverse(arr,start+1,end-1);
+
+        }
     }
 
     /**
@@ -95,7 +102,14 @@ public class Recursion {
      */
     private static MinMax findMinMax(int[] nums, int start, int end){
         // TODO: Complete this method using recursion.
-        return null;
+        if(start+1==end){
+            return new MinMax(nums[start],nums[start]);
+        }
+        else {
+            //recursing through to the next int 
+            MinMax curr=findMinMax(nums,start+1,end);
+            return new MinMax(Math.min(nums[start],curr.min),Math.max(nums[start],curr.max));    }
+      
     }
 
 }

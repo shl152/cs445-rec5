@@ -43,7 +43,7 @@ public class DivideAndConquer {
      * the work in reverse!
      */
     private static <T> void swapRegions(T[] arr, T[] aux, int start, int mid, int end) {
-        // Initialize a variable for where we are copying into in aux
+        // Initialize a variable for where we are copying into  aux
         int i = start;
         // Copy everything from mid to end from a to aux
         for (int j = mid; j < end; j++) {
@@ -86,6 +86,16 @@ public class DivideAndConquer {
      */
     private static <T> void reverse(T[] arr, T[] aux, int start, int end) {
         // TODO: Complete this method using divide & conquer recursion.
+        //if we have array of length 1, start=0, end=1
+        if(end-start>1){
+            int mid=(start+end)/2;
+            //reversethe first half
+            reverse(arr,aux,start,mid);
+            //reverse second half
+            reverse(arr,aux,mid,end);
+            swapRegions(arr,aux,start,mid,end);
+
+        }
     }
 
     /**
@@ -115,7 +125,16 @@ public class DivideAndConquer {
      */
     private static MinMax findMinMax(int[] nums, int start, int end){
         // TODO: Complete this method using divide & conquer recursion.
-        return null;
+        if(start+1==end){
+            return new MinMax(nums[start],nums[start]);
+
+        }
+        else{
+            int mid= (start+end)/2;
+            MinMax first_half=findMinMax(nums,start,mid);
+            MinMax second_half=findMinMax(nums,mid,end);
+            return new MinMax(Math.min(first_half.min,second_half.min),Math.max(first_half.max,second_half.max));
+        }
     }
 }
 
